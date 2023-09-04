@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Motorbike</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+<h1>Add Motorbike</h1>
+<form th:action="@{/motorbikes}" method="post">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="bike_name"/></td>
+        </tr>
+        <tr>
+            <td>Brand:</td>
+            <td><input type="text" name="brand"/></td>
+        </tr>
+        <tr>
+            <td>Color:</td>
+            <td><input type="text" name="color"/></td>
+        </tr>
+    </table>
+
+    <div class="button-container">
+        <button type="submit">Save</button>
+        <a th:href="@{/motorbikes}" class="btn btn-primary">Cancel</a>
+    </div>
+</form>
+</body>
+</html>

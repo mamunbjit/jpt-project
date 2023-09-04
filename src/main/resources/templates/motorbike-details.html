@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Motorbike Details</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+<h1>Motorbike Details</h1>
+<p>ID: <span th:text="${motorbike.id}"></span></p>
+<p>Name: <span th:text="${motorbike.bike_name}"></span></p>
+<p>Brand: <span th:text="${motorbike.brand}"></span></p>
+<p>Color: <span th:text="${motorbike.color}"></span></p>
+
+<form th:action="@{/motorbikes/{id}/delete(id=${motorbike.id})}" method="post">
+    <div class="button-container">
+        <a th:href="@{/motorbikes}" class="btn btn-primary">Back to List</a>
+        <a th:href="@{/motorbikes/{id}/edit(id=${motorbike.id})}" class="btn btn-primary">Edit</a>
+        <button type="submit" class="btn btn-danger" style="background-color: red; color: white;" >Delete</button>
+    </div>
+</form>
+</body>
+</html>
+
+
+

@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Motorbike List</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+<h1>Motorbike List</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Color</th>
+        <th>Edit</th>
+        <th>Details</th>
+        <th>Delete</th>
+
+    </tr>
+
+    <tr th:each="motorbike : ${motorbikes}">
+        <td th:text="${motorbike.id}"></td>
+        <td th:text="${motorbike.bike_name}"></td>
+        <td th:text="${motorbike.brand}"></td>
+        <td th:text="${motorbike.color}"></td>
+        <td>
+            <a th:href="@{/motorbikes/{id}/edit(id=${motorbike.id})}" class="btn btn-primary">Edit</a>
+        </td>
+        <td>
+            <a th:href="@{/motorbikes/{id}(id=${motorbike.id})}" class="btn btn-info" style="background-color: green; color: white;" >Details</a>
+        </td>
+        <td>
+            <form th:action="@{/motorbikes/{id}/delete(id=${motorbike.id})}" method="post">
+                <button type="submit" class="btn btn-danger" style="background-color: red; color: white;" >Delete</button>
+            </form>
+        </td>
+
+    </tr>
+</table>
+
+<div class="button-container">
+    <a th:href="@{/motorbikes/new}" class="btn btn-success" style="background-color: green; color: white;">Add Motorbike</a>
+</div>
+</body>
+</html>
+
+
+
+
