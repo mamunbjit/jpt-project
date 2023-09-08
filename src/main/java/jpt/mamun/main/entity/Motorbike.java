@@ -1,36 +1,31 @@
-package jpt.mamun.main.model;
-
+package jpt.mamun.main.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
-
 @Entity
 public class Motorbike {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String bike_name;
+    private String bikeName;
     private String brand;
     private String color;
 
+    // Constructors, getters, and setters
 
 
     public Motorbike() {
 
     }
 
-    public Motorbike(Long id, String bike_name, String brand, String color) {
+    public Motorbike(Long id, String bikeName, String brand, String color) {
         this.id = id;
-        this.bike_name = bike_name;
+        this.bikeName = bikeName;
         this.brand = brand;
         this.color = color;
     }
-
-
 
     public Long getId() {
         return id;
@@ -41,11 +36,11 @@ public class Motorbike {
     }
 
     public String getBikeName() {
-        return bike_name;
+        return bikeName;
     }
 
-    public void setBikeName(String bike_name) {
-        this.bike_name = bike_name;
+    public void setBikeName(String bikeName) {
+        this.bikeName = bikeName;
     }
 
     public String getBrand() {
